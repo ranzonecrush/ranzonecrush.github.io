@@ -1,16 +1,17 @@
 <?php
 /**
- * The blog template file.
+ * Front to the WordPress application. This file doesn't do anything, but loads
+ * wp-blog-header.php which does and tells WordPress to load the theme.
  *
- * @package flatsome
+ * @package WordPress
  */
 
-get_header();
+/**
+ * Tells WordPress to load the WordPress theme and output it.
+ *
+ * @var bool
+ */
+define( 'WP_USE_THEMES', true );
 
-?>
-
-<div id="content" class="blog-wrapper blog-archive page-wrapper">
-		<?php get_template_part( 'template-parts/posts/layout', get_theme_mod('blog_layout','right-sidebar') ); ?>
-</div><!-- .page-wrapper .blog-wrapper -->
-
-<?php get_footer(); ?>
+/** Loads the WordPress Environment and Template */
+require( dirname( __FILE__ ) . '/wp-blog-header.php' );
